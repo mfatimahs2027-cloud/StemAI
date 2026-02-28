@@ -1,0 +1,290 @@
+/* --------------------------------------------------
+   LAYER 1 — GLOBAL LAYOUT & TYPOGRAPHY
+-------------------------------------------------- */
+
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: #fafafa;
+  color: #222;
+  line-height: 1.7;
+}
+
+/* Container */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Section Spacing */
+section {
+  padding: 80px 0;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 12px 28px;
+  background: #ff4da6;
+  color: #fff;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.btn:hover {
+  background: #e60073;
+}
+
+/* Header + Nav */
+header {
+  width: 100%;
+  padding: 20px 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  z-index: 999;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav ul {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #222;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #ff4da6;
+}
+
+/* --------------------------------------------------
+   LAYER 2 — HOME PAGE SECTIONS
+-------------------------------------------------- */
+
+/* HERO SLIDER */
+.hero {
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  position: relative;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+}
+
+.hero .content {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+/* ABOUT — TWO COLUMN */
+.about {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 40px;
+  align-items: center;
+}
+
+.about img {
+  width: 100%;
+  border-radius: 15px;
+}
+
+/* SERVICES — CARD GRID */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+}
+
+.card {
+  background: #fff;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  transition: 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+}
+
+/* GALLERY PREVIEW */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 15px;
+}
+
+.gallery-grid img {
+  width: 100%;
+  border-radius: 10px;
+  transition: 0.3s ease;
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.05);
+}
+
+/* CALL TO ACTION */
+.cta {
+  background: linear-gradient(135deg, #ff4da6, #ff0066);
+  color: white;
+  text-align: center;
+  padding: 80px 20px;
+  border-radius: 20px;
+}
+
+.cta h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+/* --------------------------------------------------
+   LAYER 3 — PAGE SPECIFIC STYLING
+-------------------------------------------------- */
+
+/* ABOUT PAGE — ALTERNATING LAYOUT */
+.alt-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  align-items: center;
+  margin-bottom: 80px;
+}
+
+.alt-section:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.alt-section img {
+  width: 48%;
+  min-width: 300px;
+  border-radius: 15px;
+}
+
+.alt-section .text {
+  width: 48%;
+  min-width: 300px;
+}
+
+/* GALLERY PAGE — SPACING + HOVER */
+.full-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+}
+
+.full-gallery img {
+  width: 100%;
+  border-radius: 12px;
+  transition: 0.35s ease;
+}
+
+.full-gallery img:hover {
+  transform: scale(1.08);
+  filter: brightness(1.15);
+}
+
+/* CONTACT PAGE — FORM */
+.contact-form {
+  max-width: 600px;
+  margin: auto;
+  background: #fff;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.contact-form textarea {
+  height: 150px;
+  resize: none;
+}
+
+.contact-form button {
+  width: 100%;
+  padding: 14px;
+  background: #ff4da6;
+  border: none;
+  color: white;
+  font-size: 1.1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.contact-form button:hover {
+  background: #e60073;
+}
+
+/* --------------------------------------------------
+   RESPONSIVE FIXES
+-------------------------------------------------- */
+
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+
+  nav ul {
+    gap: 15px;
+  }
+
+  .alt-section img,
+  .alt-section .text {
+    width: 100%;
+  }
+}
